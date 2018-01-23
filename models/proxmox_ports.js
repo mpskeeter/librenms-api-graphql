@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	proxmoxPorts.associate = function(models) {
-		proxmoxPorts.belongsTo(models.vminfo, {foreignKey: 'vmId', targetKey: 'id'});
+		proxmoxPorts.belongsTo(models.vminfo, {foreignKey: 'vmId', targetKey: 'id', onDelete: 'CASCADE'});
 	}
 
 	return proxmoxPorts;

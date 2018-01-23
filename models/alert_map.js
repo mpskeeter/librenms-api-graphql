@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	alertMap.associate = function(models) {
-    // alertMap.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    // alertMap.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
   return alertMap;

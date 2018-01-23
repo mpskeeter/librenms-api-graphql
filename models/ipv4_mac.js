@@ -46,8 +46,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ipv4Mac.associate = function(models) {
-		ipv4Mac.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId'});
-		ipv4Mac.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		ipv4Mac.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId', onDelete: 'CASCADE'});
+		ipv4Mac.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return ipv4Mac;

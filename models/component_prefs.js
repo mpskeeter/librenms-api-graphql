@@ -49,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	componentPrefs.associate = function(models) {
-		componentPrefs.belongsTo(models.component, {foreignKey: 'componentId', sourceKey: 'id'})
+		componentPrefs.belongsTo(models.component, {foreignKey: 'componentId', sourceKey: 'id', onDelete: 'CASCADE'})
 		// componentPrefs.belongsTo(models.users, {foreignKey: 'userId', sourceKey: 'userId'})
 		// componentPrefs.belongsTo(models.widgets, {foreignKey: 'widgetId', sourceKey: 'widgetId'})
 	}

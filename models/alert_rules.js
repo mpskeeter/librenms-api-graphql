@@ -67,7 +67,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	alertRules.associate = function(models) {
-    alertRules.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    alertRules.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 		alertRules.hasMany(models.alerts, {foreignKey: 'id', targetKey: 'ruleId'});
   }
 

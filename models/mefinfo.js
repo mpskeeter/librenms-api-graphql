@@ -61,8 +61,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	mefinfo.associate = function(models) {
-		mefinfo.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'})
-		// mefinfo.belongsTo(models.devices, {foreignKey: 'remoteDeviceId', sourceKey: 'deviceId'})
+		mefinfo.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'})
+		// mefinfo.belongsTo(models.devices, {foreignKey: 'remoteDeviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'})
 	}
 
 	return mefinfo;

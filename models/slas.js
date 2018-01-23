@@ -67,7 +67,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	slas.associate = function(models) {
-		slas.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+		slas.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return slas;

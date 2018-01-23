@@ -110,7 +110,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	muninPluginsDs.associate = function(models) {
-		muninPluginsDs.belongsTo(models.muninPlugins, {foreignKey: 'mplugId', sourceKey: 'mplugId'});
+		muninPluginsDs.belongsTo(models.muninPlugins, {foreignKey: 'mplugId', sourceKey: 'mplugId', onDelete: 'CASCADE'});
 	}
 
 

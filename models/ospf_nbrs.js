@@ -96,8 +96,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ospfNbrs.associate = function(models) {
-		ospfNbrs.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
-		ospfNbrs.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId'});
+		ospfNbrs.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
+		ospfNbrs.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId', onDelete: 'CASCADE'});
 	}
 
 	return ospfNbrs;

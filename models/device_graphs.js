@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   deviceGraphs.associate = function(models) {
-    deviceGraphs.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    deviceGraphs.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
   return deviceGraphs;

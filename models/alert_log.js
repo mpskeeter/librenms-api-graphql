@@ -50,7 +50,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	alertLog.associate = function(models) {
-    alertLog.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    alertLog.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
   return alertLog;

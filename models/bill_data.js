@@ -50,7 +50,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	billData.associate = function(models) {
-		billData.belongsTo(models.bills, {foreignKey: 'billId', targetKey: 'billId'});
+		billData.belongsTo(models.bills, {foreignKey: 'billId', targetKey: 'billId', onDelete: 'CASCADE'});
 	}
 
 	return billData;

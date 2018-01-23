@@ -68,7 +68,7 @@ module.exports = function(sequelize, DataTypes) {
 	vminfo.associate = function(models) {
 		const stdAssociation = {foreignKey: 'vmid', targetKey: 'id'};
 
-		vminfo.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+		vminfo.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 
 		vminfo.hasMany(models.proxmox,      stdAssociation);
 		vminfo.hasMany(models.proxmoxPorts, stdAssociation);

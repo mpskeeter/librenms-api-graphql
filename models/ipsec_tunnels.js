@@ -60,7 +60,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ipsecTunnels.associate = function(models) {
-		ipsecTunnels.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		ipsecTunnels.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return ipsecTunnels;

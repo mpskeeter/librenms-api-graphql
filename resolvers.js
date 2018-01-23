@@ -2,10 +2,15 @@ export default {
   Query: {
     devices: (parent, args, {models}) => models.devices.findAll(),
     device:  (parent, {deviceId}, {models}) => models.devices.findOne({where: {deviceId}}),
+
     ports:   (parent, args, {models}) => models.ports.findAll(),
     port:    (parent, {portId}, {models}) => models.ports.findAll({where: {portId}}),
     bills:   (parent, args, {models}) => models.bills.findAll(),
     bill:    (parent, {billId}, {models}) => models.bills.findAll({where: {billId}}),
+  },
+  Mutation: {
+    del_device_id:        (parent, {deviceId}, {models}) => models.devices.destroy({where: {deviceId}}),
+    del_device_hostname:  (parent, {hostname}, {models}) => models.devices.destroy({where: {hostname}}),
   },
   Device: {
     // portCount: function({deviceId}, args, {models}) {

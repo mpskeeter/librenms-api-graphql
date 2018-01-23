@@ -93,7 +93,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	storage.associate = function(models) {
-    storage.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    storage.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
 	return storage;

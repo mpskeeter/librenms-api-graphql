@@ -69,7 +69,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	toner.associate = function(models) {
-		toner.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		toner.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return toner;

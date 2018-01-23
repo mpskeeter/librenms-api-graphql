@@ -53,8 +53,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ipv4Addresses.associate = function(models) {
-		ipv4Addresses.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId'});
-		ipv4Addresses.belongsTo(models.ipv4Networks, {foreignKey: 'ipv4NetworkId', sourceKey: 'ipv4NetworkId'});
+		ipv4Addresses.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId', onDelete: 'CASCADE'});
+		ipv4Addresses.belongsTo(models.ipv4Networks, {foreignKey: 'ipv4NetworkId', sourceKey: 'ipv4NetworkId', onDelete: 'CASCADE'});
 	}
 
 	return ipv4Addresses;

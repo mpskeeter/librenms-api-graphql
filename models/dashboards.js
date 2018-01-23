@@ -43,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
 
 	dashboards.associate = function(models) {
 		dashboards.hasMany(models.usersWidgets, {foreignKey: 'dashboardId', sourceKey: 'dashboardId'})
-    dashboards.belongsTo(models.users, {foreignKey: 'userId', sourceKey: 'userId'});
+    dashboards.belongsTo(models.users, {foreignKey: 'userId', sourceKey: 'userId', onDelete: 'CASCADE'});
 	};
 
 	return dashboards;

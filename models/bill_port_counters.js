@@ -58,8 +58,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	billPortCounters.associate = function(models) {
-		billPortCounters.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId'});
-		billPortCounters.belongsTo(models.bills, {foreignKey: 'billId', targetKey: 'billId'});
+		billPortCounters.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId', onDelete: 'CASCADE'});
+		billPortCounters.belongsTo(models.bills, {foreignKey: 'billId', targetKey: 'billId', onDelete: 'CASCADE'});
 	}
 
 	return billPortCounters;

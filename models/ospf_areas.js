@@ -78,7 +78,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ospfAreas.associate = function(models) {
-		ospfAreas.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		ospfAreas.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return ospfAreas;

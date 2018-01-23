@@ -120,7 +120,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	portsAdsl.associate = function(models) {
-		portsAdsl.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId'});
+		portsAdsl.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId', onDelete: 'CASCADE'});
 	}
 
 	return portsAdsl;

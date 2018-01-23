@@ -68,7 +68,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	applications.associate = function(models) {
-    applications.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    applications.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 		applications.hasMany(models.applicationMetrics, {foreignKey: 'appId', targetKey: 'appId'});
   }
 

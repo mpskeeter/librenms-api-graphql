@@ -65,7 +65,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	devicePerf.associate = function(models) {
-    devicePerf.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+    devicePerf.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	};
 
 	return devicePerf;

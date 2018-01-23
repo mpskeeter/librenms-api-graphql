@@ -47,7 +47,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	vrfLiteCisco.associate = function(models) {
-		vrfLiteCisco.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'})
+		vrfLiteCisco.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'})
 	}
 
 	return vrfLiteCisco;

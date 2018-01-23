@@ -80,8 +80,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	portsStp.associate = function(models) {
-		portsStp.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
-		portsStp.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId'});
+		portsStp.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
+		portsStp.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId', onDelete: 'CASCADE'});
 	}
 
 	return portsStp;

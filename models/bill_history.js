@@ -126,7 +126,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	billHistory.associate = function(models) {
-		billHistory.belongsTo(models.bills, {foreignKey: 'billId', targetKey: 'billId'});
+		billHistory.belongsTo(models.bills, {foreignKey: 'billId', targetKey: 'billId', onDelete: 'CASCADE'});
 	}
 
 	return billHistory;

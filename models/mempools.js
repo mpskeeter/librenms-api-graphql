@@ -103,8 +103,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	mempools.associate = function(models) {
-		mempools.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
-		// mempools.belongsTo(models.hrDevice, {foreignKey: 'hrDeviceId', sourceKey: 'hrDeviceId'});
+		mempools.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
+		// mempools.belongsTo(models.hrDevice, {foreignKey: 'hrDeviceId', sourceKey: 'hrDeviceId', onDelete: 'CASCADE'});
 	}
 
 	return mempools;

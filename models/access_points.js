@@ -103,7 +103,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	accessPoints.associate = function(models) {
-    accessPoints.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    accessPoints.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
   return accessPoints;

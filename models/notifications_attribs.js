@@ -47,8 +47,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	notificationsAttribs.associate = function(models) {
-		notificationsAttribs.belongsTo(models.notifications, {foreignKey: 'notificationsId', sourceKey: 'notificationsId'})
-		notificationsAttribs.belongsTo(models.users, {foreignKey: 'userId', sourceKey: 'userId'})
+		notificationsAttribs.belongsTo(models.notifications, {foreignKey: 'notificationsId', sourceKey: 'notificationsId', onDelete: 'CASCADE'})
+		notificationsAttribs.belongsTo(models.users, {foreignKey: 'userId', sourceKey: 'userId', onDelete: 'CASCADE'})
 	}
 
 	return notificationsAttribs;

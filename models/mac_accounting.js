@@ -150,7 +150,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	macAccounting.associate = function(models) {
-		macAccounting.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId'});
+		macAccounting.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId', onDelete: 'CASCADE'});
 	}
 
 	return macAccounting;

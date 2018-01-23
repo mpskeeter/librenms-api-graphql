@@ -80,7 +80,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	netscalerVservers.associate = function(models) {
-		netscalerVservers.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		netscalerVservers.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return netscalerVservers;

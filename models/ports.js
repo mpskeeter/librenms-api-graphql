@@ -408,7 +408,7 @@ module.exports = function(sequelize, DataTypes) {
 		ports.hasMany(models.portsVlans,       stdAssociation);
 		ports.hasMany(models.pseudowires,      stdAssociation);
 
-		ports.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'})
+		ports.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'})
 	}
 
 	return ports;

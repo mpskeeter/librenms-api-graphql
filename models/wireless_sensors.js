@@ -142,7 +142,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	wirelessSensors.associate = function(models) {
-		wirelessSensors.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+		wirelessSensors.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return wirelessSensors;

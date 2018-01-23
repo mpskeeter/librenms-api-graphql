@@ -47,7 +47,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	apiTokens.associate = function(models) {
-		apiTokens.belongsTo(models.users, {foreignKey: 'userId', targetKey: 'userId'})
+		apiTokens.belongsTo(models.users, {foreignKey: 'userId', targetKey: 'userId', onDelete: 'CASCADE'})
 	}
 
 	return apiTokens;

@@ -35,8 +35,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	alertTemplateMap.associate = function(models) {
-    alertTemplateMap.belongsTo(models.alertRules, {foreignKey: 'alertRuleId', targetKey: 'id'});
-		alertTemplateMap.belongsTo(models.alertTemplates, {foreignKey: 'alertTemplatesId', targetKey: 'id'});
+    alertTemplateMap.belongsTo(models.alertRules, {foreignKey: 'alertRuleId', targetKey: 'id', onDelete: 'CASCADE'});
+		alertTemplateMap.belongsTo(models.alertTemplates, {foreignKey: 'alertTemplatesId', targetKey: 'id', onDelete: 'CASCADE'});
   }
 
   return alertTemplateMap;

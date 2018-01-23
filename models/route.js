@@ -68,7 +68,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	route.associate = function(models) {
-		route.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'})
+		route.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'})
 	}
 
 	return route;

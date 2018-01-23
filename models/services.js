@@ -83,7 +83,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	services.associate = function(models) {
-    services.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    services.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
 	return services;

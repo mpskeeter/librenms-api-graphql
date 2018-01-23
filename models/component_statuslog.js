@@ -51,7 +51,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	componentStatuslog.associate = function(models) {
-		componentStatuslog.belongsTo(models.component, {foreignKey: 'componentId', sourceKey: 'id'})
+		componentStatuslog.belongsTo(models.component, {foreignKey: 'componentId', sourceKey: 'id', onDelete: 'CASCADE'})
 	}
 
 	return componentStatuslog;

@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	juniAtmVp.associate = function(models) {
-		juniAtmVp.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId'});
+		juniAtmVp.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId', onDelete: 'CASCADE'});
 	}
 
 	return juniAtmVp;

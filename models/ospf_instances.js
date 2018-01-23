@@ -98,7 +98,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ospfInstances.associate = function(models) {
-		ospfInstances.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		ospfInstances.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return ospfInstances;

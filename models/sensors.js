@@ -116,12 +116,12 @@ module.exports = function(sequelize, DataTypes) {
 				allowNull: true,
 				field: 'entPhysicalIndex_measured'
 			},
-			lastupdate: {
-				type: DataTypes.DATE,
-				allowNull: false,
-				defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-				field: 'lastupdate'
-			},
+			// lastupdate: {
+			// 	type: DataTypes.DATE,
+			// 	allowNull: false,
+			// 	defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+			// 	// field: 'lastupdate'
+			// },
 			sensorPrev: {
 				type: DataTypes.FLOAT,
 				allowNull: true,
@@ -135,11 +135,20 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		{
 			// don't add the timestamp attributes (updatedAt, createdAt)
-			timestamps: false,
+			timestamps: true,
 
 			// don't use camelcase for automatically added attributes but underscore style
 			// so updatedAt will be updated_at
 			underscored: true,
+
+			// I don't want createdAt
+		  createdAt: false,
+
+		  // I want updatedAt to actually be called updateTimestamp
+		  updatedAt: 'lastupdate',
+
+		  // And deletedAt to be called destroyTime (remember to enable paranoid for this to work)
+		  deletedAt: false,
 
 			// define the table's name
 			tableName: 'sensors'
@@ -147,8 +156,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	sensors.associate = function(models) {
-		sensors.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
-		sensors.hasMany(models.sensorsToStateIndexes, {foreignKey: 'sensorId', sourceKey: 'sensorId'});
+		sensors.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
+		sensors.hasMany(models.sensorsToStateIndexes, {foreignKey: 'sensorId', sourceKey: 'sensorId', onDelete: 'CASCADE'});
 	}
 
 	return sensors;

@@ -66,7 +66,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	packages.associate = function(models) {
-    packages.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    packages.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
 	return packages;

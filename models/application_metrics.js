@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	applicationMetrics.associate = function(models) {
-    applicationMetrics.belongsTo(models.applications, {foreignKey: 'appId', targetKey: 'appId'});
+    applicationMetrics.belongsTo(models.applications, {foreignKey: 'appId', targetKey: 'appId', onDelete: 'CASCADE'});
   }
 
 	return applicationMetrics;

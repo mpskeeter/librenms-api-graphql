@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   devicesAttribs.associate = function(models) {
-    devicesAttribs.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    devicesAttribs.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
   return devicesAttribs;

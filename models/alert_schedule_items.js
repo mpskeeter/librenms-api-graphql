@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	alertScheduleItems.associate = function(models) {
-    alertScheduleItems.belongsTo(models.alertSchedule, {foreignKey: 'scheduleId', targetKey: 'scheduleId'});
+    alertScheduleItems.belongsTo(models.alertSchedule, {foreignKey: 'scheduleId', targetKey: 'scheduleId', onDelete: 'CASCADE'});
   }
 
   return alertScheduleItems;

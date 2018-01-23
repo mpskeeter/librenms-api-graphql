@@ -63,8 +63,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ipv6Addresses.associate = function(models) {
-		ipv6Addresses.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId'});
-		ipv6Addresses.belongsTo(models.ipv6Networks, {foreignKey: 'ipv6NetworkId', sourceKey: 'ipv6NetworkId'});
+		ipv6Addresses.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId', onDelete: 'CASCADE'});
+		ipv6Addresses.belongsTo(models.ipv6Networks, {foreignKey: 'ipv6NetworkId', sourceKey: 'ipv6NetworkId', onDelete: 'CASCADE'});
 	}
 
 	return ipv6Addresses;

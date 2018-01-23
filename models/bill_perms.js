@@ -28,8 +28,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	billPerms.associate = function(models) {
-		billPerms.belongsTo(models.users, {foreignKey: 'userId', targetKey: 'userId'});
-		billPerms.belongsTo(models.bills, {foreignKey: 'billId', targetKey: 'billId'});
+		billPerms.belongsTo(models.users, {foreignKey: 'userId', targetKey: 'userId', onDelete: 'CASCADE'});
+		billPerms.belongsTo(models.bills, {foreignKey: 'billId', targetKey: 'billId', onDelete: 'CASCADE'});
 	}
 
 	return billPerms;

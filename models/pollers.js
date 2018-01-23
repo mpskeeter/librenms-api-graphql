@@ -50,7 +50,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	pollers.associate = function(models) {
-		pollers.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		pollers.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
 	return pollers;

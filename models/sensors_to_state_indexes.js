@@ -43,8 +43,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	sensorsToStateIndexes.associate = function(models) {
-		sensorsToStateIndexes.belongsTo(models.sensors, {foreignKey: 'sensorId', sourceKey: 'sensorId'})
-		sensorsToStateIndexes.belongsTo(models.stateIndexes, {foreignKey: 'stateIndexId', sourceKey: 'stateIndexId'})
+		sensorsToStateIndexes.belongsTo(models.sensors, {foreignKey: 'sensorId', sourceKey: 'sensorId', onDelete: 'CASCADE'})
+		sensorsToStateIndexes.belongsTo(models.stateIndexes, {foreignKey: 'stateIndexId', sourceKey: 'stateIndexId', onDelete: 'CASCADE'})
 	}
 
 	return sensorsToStateIndexes;

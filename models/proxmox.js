@@ -52,8 +52,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	proxmox.associate = function(models) {
-		proxmox.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
-		proxmox.belongsTo(models.vminfo, {foreignKey: 'vmid', targetKey: 'id'});
+		proxmox.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
+		proxmox.belongsTo(models.vminfo, {foreignKey: 'vmid', targetKey: 'id', onDelete: 'CASCADE'});
 	}
 
 	return proxmox;

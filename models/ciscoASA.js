@@ -56,7 +56,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ciscoAsa.associate = function(models) {
-		ciscoAsa.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		ciscoAsa.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return ciscoAsa;

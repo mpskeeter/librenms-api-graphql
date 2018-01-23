@@ -132,7 +132,7 @@ module.exports = function(sequelize, DataTypes) {
 		bills.hasMany(models.billPerms,        stdAssociation);
 		bills.hasMany(models.billPortCounters, stdAssociation);
 		bills.hasMany(models.billPorts,        stdAssociation);
-		// bills.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+		// bills.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return bills;

@@ -80,8 +80,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	pseudowires.associate = function(models) {
-		pseudowires.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
-		pseudowires.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId'});
+		pseudowires.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
+		pseudowires.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId', onDelete: 'CASCADE'});
 	}
 
 	return pseudowires;

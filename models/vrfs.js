@@ -50,7 +50,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	vrfs.associate = function(models) {
-		vrfs.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		vrfs.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return vrfs;

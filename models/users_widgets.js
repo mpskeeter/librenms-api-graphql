@@ -76,9 +76,9 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	usersWidgets.associate = function(models) {
-		usersWidgets.belongsTo(models.dashboards, {foreignKey: 'dashboardId', sourceKey: 'dashboardId'})
-		usersWidgets.belongsTo(models.users, {foreignKey: 'userId', sourceKey: 'userId'})
-		usersWidgets.belongsTo(models.widgets, {foreignKey: 'widgetId', sourceKey: 'widgetId'})
+		usersWidgets.belongsTo(models.dashboards, {foreignKey: 'dashboardId', sourceKey: 'dashboardId', onDelete: 'CASCADE'})
+		usersWidgets.belongsTo(models.users, {foreignKey: 'userId', sourceKey: 'userId', onDelete: 'CASCADE'})
+		usersWidgets.belongsTo(models.widgets, {foreignKey: 'widgetId', sourceKey: 'widgetId', onDelete: 'CASCADE'})
 	}
 
 	return usersWidgets;

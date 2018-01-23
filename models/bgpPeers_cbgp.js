@@ -133,7 +133,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	bgpPeersCbgp.associate = function(models) {
-		bgpPeersCbgp.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		bgpPeersCbgp.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return bgpPeersCbgp;

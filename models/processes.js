@@ -53,7 +53,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	processes.associate = function(models) {
-    processes.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    processes.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
 	return processes;

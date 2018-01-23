@@ -38,9 +38,9 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	portsFdb.associate = function(models) {
-		portsFdb.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
-		portsFdb.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId'});
-		portsFdb.belongsTo(models.vlans, {foreignKey: 'vlanId', targetKey: 'vlanId'});
+		portsFdb.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
+		portsFdb.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId', onDelete: 'CASCADE'});
+		portsFdb.belongsTo(models.vlans, {foreignKey: 'vlanId', targetKey: 'vlanId', onDelete: 'CASCADE'});
 	}
 
 	return portsFdb;

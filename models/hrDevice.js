@@ -61,7 +61,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	hrDevice.associate = function(models) {
-		hrDevice.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		hrDevice.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 		// hrDevice.hasMany(models.mempools, {foreignKey: 'hrDeviceId', sourceKey: 'hrDeviceId'});
 		hrDevice.hasMany(models.processors, {foreignKey: 'hrDeviceId', sourceKey: 'hrDeviceId'});
 	}

@@ -110,7 +110,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	stp.associate = function(models) {
-		stp.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+		stp.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return stp;

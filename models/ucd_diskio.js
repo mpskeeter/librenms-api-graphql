@@ -40,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ucdDiskio.associate = function(models) {
-    ucdDiskio.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    ucdDiskio.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
 	return ucdDiskio;

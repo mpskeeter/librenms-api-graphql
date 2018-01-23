@@ -66,7 +66,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	syslog.associate = function(models) {
-    syslog.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+    syslog.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
   }
 
 	return syslog;

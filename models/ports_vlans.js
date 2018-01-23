@@ -66,8 +66,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	portsVlans.associate = function(models) {
-		portsVlans.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
-		portsVlans.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId'});
+		portsVlans.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
+		portsVlans.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId', onDelete: 'CASCADE'});
 	}
 
 	return portsVlans;

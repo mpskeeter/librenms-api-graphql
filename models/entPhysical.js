@@ -115,7 +115,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	entPhysical.associate = function(models) {
-		entPhysical.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		entPhysical.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 		entPhysical.hasMany(models.entityState, {foreignKey: 'entPhysicalId', sourceKey: 'entPhysicalId'})
 	}
 

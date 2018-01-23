@@ -65,7 +65,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	tnmsneinfo.associate = function(models) {
-		tnmsneinfo.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+		tnmsneinfo.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return tnmsneinfo;

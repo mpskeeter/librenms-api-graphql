@@ -38,8 +38,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	deviceGroupDevice.associate = function(models) {
-    deviceGroupDevice.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
-    deviceGroupDevice.belongsTo(models.deviceGroups, {foreignKey: 'deviceGroupId', sourceKey: 'id'});
+    deviceGroupDevice.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
+    deviceGroupDevice.belongsTo(models.deviceGroups, {foreignKey: 'deviceGroupId', sourceKey: 'id', onDelete: 'CASCADE'});
 	};
 
 	return deviceGroupDevice;

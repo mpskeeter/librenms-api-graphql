@@ -141,8 +141,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	ospfPorts.associate = function(models) {
-		ospfPorts.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
-		ospfPorts.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId'});
+		ospfPorts.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
+		ospfPorts.belongsTo(models.ports, {foreignKey: 'portId', sourceKey: 'portId', onDelete: 'CASCADE'});
 	}
 
 	return ospfPorts;

@@ -90,7 +90,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	cefSwitching.associate = function(models) {
-		cefSwitching.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		cefSwitching.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return cefSwitching;

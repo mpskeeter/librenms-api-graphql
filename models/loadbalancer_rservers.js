@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	loadbalancerRservers.associate = function(models) {
-		loadbalancerRservers.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId'});
+		loadbalancerRservers.belongsTo(models.devices, {foreignKey: 'deviceId', sourceKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return loadbalancerRservers;

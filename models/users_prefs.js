@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	usersPrefs.associate = function(models) {
-		usersPrefs.belongsTo(models.users, {foreignKey: 'userId', sourceKey: 'userId'})
+		usersPrefs.belongsTo(models.users, {foreignKey: 'userId', sourceKey: 'userId', onDelete: 'CASCADE'})
 	}
 
 	return usersPrefs;

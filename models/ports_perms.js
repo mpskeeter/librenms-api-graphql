@@ -33,8 +33,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	portsPerms.associate = function(models) {
-		portsPerms.belongsTo(models.users, {foreignKey: 'userId', targetKey: 'userId'});
-		portsPerms.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId'});
+		portsPerms.belongsTo(models.users, {foreignKey: 'userId', targetKey: 'userId', onDelete: 'CASCADE'});
+		portsPerms.belongsTo(models.ports, {foreignKey: 'portId', targetKey: 'portId', onDelete: 'CASCADE'});
 	}
 
 	return portsPerms;

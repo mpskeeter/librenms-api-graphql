@@ -51,7 +51,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	session.associate = function(models) {
-		// session.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+		// session.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return session;

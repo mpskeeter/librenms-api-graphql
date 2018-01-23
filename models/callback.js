@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	callback.associate = function(models) {
-		// callback.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
+		// callback.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
 	}
 
 	return callback;

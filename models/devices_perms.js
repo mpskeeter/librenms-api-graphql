@@ -33,8 +33,8 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   devicesPerms.associate = function(models) {
-    devicesPerms.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
-    devicesPerms.belongsTo(models.users, {foreignKey: 'userId', targetKey: 'userId'});
+    devicesPerms.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
+    devicesPerms.belongsTo(models.users, {foreignKey: 'userId', targetKey: 'userId', onDelete: 'CASCADE'});
   }
 
   return devicesPerms;

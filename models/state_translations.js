@@ -57,7 +57,7 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	stateTranslations.associate = function(models) {
-		stateTranslations.belongsTo(models.stateIndexes, {foreignKey: 'stateIndexId', targetKey: 'stateIndexId'});
+		stateTranslations.belongsTo(models.stateIndexes, {foreignKey: 'stateIndexId', targetKey: 'stateIndexId', onDelete: 'CASCADE'});
 	}
 
 	return stateTranslations;

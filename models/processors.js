@@ -78,8 +78,8 @@ module.exports = function(sequelize, DataTypes) {
 	);
 
 	processors.associate = function(models) {
-    processors.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId'});
-		processors.belongsTo(models.hrDevice, {foreignKey: 'hrDeviceId', targetKey: 'hrDeviceId'});
+    processors.belongsTo(models.devices, {foreignKey: 'deviceId', targetKey: 'deviceId', onDelete: 'CASCADE'});
+		processors.belongsTo(models.hrDevice, {foreignKey: 'hrDeviceId', targetKey: 'hrDeviceId', onDelete: 'CASCADE'});
   }
 
 	return processors;
