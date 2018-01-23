@@ -147,8 +147,8 @@ models.sequelize
   .query('SET FOREIGN_KEY_CHECKS = 0')
   .then(function() {
     models.sequelize
-      // .sync({force: false})
-      .sync({force: true})
+      .sync({force: false})
+      // .sync({force: true})
       .then(function() {
         models.sequelize
           .query('SET FOREIGN_KEY_CHECKS = 1')
