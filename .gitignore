@@ -1,0 +1,5 @@
+/fixtures/test_data*.js
+/node_modules
+/config/config.json
+/original_models
+/seeders
